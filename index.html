@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football API — Real-Time Football Data for Developers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚽</span> FootballAPI
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#endpoints">Endpoints</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#docs">Docs</a></li>
+      </ul>
+      <a href="#pricing" class="btn btn-sm">Get API Key</a>
+      <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-badge">Trusted by 10,000+ developers</p>
+        <h1>Real-Time <span class="text-gradient">Football Data</span> for Your Apps</h1>
+        <p class="hero-sub">Live scores, standings, fixtures, player stats, and more — delivered through a fast, reliable RESTful API. Build the next great football experience.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-lg">Start Free Trial</a>
+          <a href="#docs" class="btn btn-lg btn-outline">View Docs</a>
+        </div>
+        <p class="hero-note">No credit card required · 1,000 free requests/month</p>
+      </div>
+      <div class="hero-code">
+        <div class="code-window">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <pre><code><span class="kw">GET</span> /v3/matches/live
+
+<span class="cm">// Response</span>
+{
+  <span class="str">"matches"</span>: [
+    {
+      <span class="str">"id"</span>: 48291,
+      <span class="str">"home"</span>: <span class="str">"Arsenal"</span>,
+      <span class="str">"away"</span>: <span class="str">"Chelsea"</span>,
+      <span class="str">"score"</span>: { <span class="str">"home"</span>: 2, <span class="str">"away"</span>: 1 },
+      <span class="str">"minute"</span>: 73,
+      <span class="str">"status"</span>: <span class="str">"LIVE"</span>,
+      <span class="str">"league"</span>: <span class="str">"Premier League"</span>
+    }
+  ]
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-num" data-target="900">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Leagues & Cups</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="30">0</span><span class="stat-suffix">k+</span>
+        <span class="stat-label">Matches per Season</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="99">0</span><span class="stat-suffix">.9%</span>
+        <span class="stat-label">Uptime SLA</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="200">0</span><span class="stat-suffix">ms</span>
+        <span class="stat-label">Avg Response Time</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Everything You Need</h2>
+      <p class="section-sub">Comprehensive football data coverage from leagues around the world.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Live Scores</h3>
+          <p>Real-time match updates with sub-minute latency. Goals, cards, substitutions, and minute-by-minute events.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Standings & Tables</h3>
+          <p>Full league tables with points, goal difference, form, home/away splits, and historical season data.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👤</div>
+          <h3>Player Statistics</h3>
+          <p>Detailed player profiles with goals, assists, ratings, minutes played, and season-by-season performance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Fixtures & Results</h3>
+          <p>Complete schedules with kick-off times, venue info, referee assignments, and historical results.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>900+ Competitions</h3>
+          <p>From the Premier League to lower divisions. Domestic leagues, international cups, and continental tournaments.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Webhooks</h3>
+          <p>Push notifications for goals, match start/end, lineups published, and other key events via webhooks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endpoints -->
+  <section id="endpoints" class="endpoints">
+    <div class="container">
+      <h2 class="section-title">Powerful Endpoints</h2>
+      <p class="section-sub">Clean RESTful API with JSON responses. Simple to integrate, easy to scale.</p>
+      <div class="endpoint-list">
+        <div class="endpoint">
+          <span class="method get">GET</span>
+          <code>/v3/matches/live</code>
+          <span class="endpoint-desc">All live matches with real-time scores</span>
+        </div>
+        <div class="endpoint">
+          <span class="method get">GET</span>
+          <code>/v3/matches/{id}</code>
+          <span class="endpoint-desc">Match details, lineups, events, stats</span>
+        </div>
+        <div class="endpoint">
+          <span class="method get">GET</span>
+          <code>/v3/leagues/{id}/standings</code>
+          <span class="endpoint-desc">Current league table & standings</span>
+        </div>
+        <div class="endpoint">
+          <span class="method get">GET</span>
+          <code>/v3/leagues/{id}/fixtures</code>
+          <span class="endpoint-desc">Upcoming & past fixtures by league</span>
+        </div>
+        <div class="endpoint">
+          <span class="method get">GET</span>
+          <code>/v3/players/{id}/stats</code>
+          <span class="endpoint-desc">Season stats, career history, ratings</span>
+        </div>
+        <div class="endpoint">
+          <span class="method get">GET</span>
+          <code>/v3/teams/{id}</code>
+          <span class="endpoint-desc">Team info, squad, venue, transfers</span>
+        </div>
+        <div class="endpoint">
+          <span class="method post">POST</span>
+          <code>/v3/webhooks</code>
+          <span class="endpoint-desc">Subscribe to real-time event pushes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Example -->
+  <section id="docs" class="docs-section">
+    <div class="container docs-grid">
+      <div class="docs-text">
+        <h2 class="section-title left">Up and Running in Minutes</h2>
+        <p>Our API is designed to be developer-friendly. Get your API key and start making requests immediately — no complex setup or SDKs required.</p>
+        <ul class="docs-list">
+          <li>RESTful JSON API</li>
+          <li>Authentication via API key header</li>
+          <li>Pagination, filtering, and sorting built-in</li>
+          <li>SDKs for JavaScript, Python, PHP, and more</li>
+          <li>Interactive API playground in dashboard</li>
+        </ul>
+        <a href="#pricing" class="btn">Get Your API Key</a>
+      </div>
+      <div class="docs-code">
+        <div class="code-window">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <div class="code-tabs">
+            <button class="code-tab active" data-lang="js">JavaScript</button>
+            <button class="code-tab" data-lang="py">Python</button>
+            <button class="code-tab" data-lang="curl">cURL</button>
+          </div>
+          <pre class="code-block active" data-lang="js"><code><span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'https://api.footballapi.com/v3/matches/live'</span>, {
+  headers: {
+    <span class="str">'X-API-Key'</span>: <span class="str">'your_api_key'</span>
+  }
+});
+
+<span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+console.<span class="fn">log</span>(data.matches);</code></pre>
+          <pre class="code-block" data-lang="py"><code><span class="kw">import</span> requests
+
+res = requests.<span class="fn">get</span>(
+    <span class="str">'https://api.footballapi.com/v3/matches/live'</span>,
+    headers={<span class="str">'X-API-Key'</span>: <span class="str">'your_api_key'</span>}
+)
+
+matches = res.<span class="fn">json</span>()[<span class="str">'matches'</span>]
+<span class="fn">print</span>(matches)</code></pre>
+          <pre class="code-block" data-lang="curl"><code><span class="fn">curl</span> -X GET \
+  <span class="str">'https://api.footballapi.com/v3/matches/live'</span> \
+  -H <span class="str">'X-API-Key: your_api_key'</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-sub">Start free. Scale as you grow. No hidden fees.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Free</h3>
+          <div class="price">$0<span>/mo</span></div>
+          <ul>
+            <li>1,000 requests/month</li>
+            <li>Live scores</li>
+            <li>5 leagues</li>
+            <li>Community support</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-full">Get Started</a>
+        </div>
+        <div class="price-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Pro</h3>
+          <div class="price">$29<span>/mo</span></div>
+          <ul>
+            <li>100,000 requests/month</li>
+            <li>All endpoints</li>
+            <li>All leagues & cups</li>
+            <li>Webhooks</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#" class="btn btn-full">Get Started</a>
+        </div>
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <ul>
+            <li>Unlimited requests</li>
+            <li>Dedicated infrastructure</li>
+            <li>Custom SLA</li>
+            <li>Historical data access</li>
+            <li>Account manager</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-full">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Ready to Build?</h2>
+      <p>Join thousands of developers using FootballAPI to power their apps.</p>
+      <a href="#pricing" class="btn btn-lg btn-white">Get Your Free API Key</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-icon">⚽</span> FootballAPI</a>
+        <p>Real-time football data for developers. Fast, reliable, and easy to integrate.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#docs">Documentation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="mailto:support@football-api.com">Email Support</a>
+        <a href="#">Status Page</a>
+        <a href="#">API Changelog</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 FootballAPI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
